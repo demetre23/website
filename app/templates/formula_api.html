@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Formula 1 Data</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 mb-4">Formula 1 Data</h1>
+    <div class="row">
+        {% for race_data in races_data %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Race: {{ race_data['race_name'] }}</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Driver Name: {{ race_data['driver']['name'] }}</li>
+                        <li class="list-group-item">Driver Number: {{ race_data['driver']['number'] }}</li>
+                        <li class="list-group-item">Team Name: {{ race_data['team']['name'] }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container my-4">
+        {% if session['username'] %}
+            <h2 class="text-primary">Welcome, {{ session['username'] }}!</h2>
+        {% else %}
+            <h2 class="text-secondary">Welcome, Guest!</h2>
+        {% endif %}
+        <h1 class="display-4 mb-4">This is the home page of Formula 1 website.</h1>
+
+        <div class="card">
+            <img src="https://cdn-1.motorsport.com/images/amp/68ey3q40/s1000/f1-abu-dhabi-gp-2017-f1-logo-6614911.jpg" class="card-img-top img-fluid" alt="Formula 1 Image">
+            <img src="https://i.ytimg.com/vi/jKZKCl_GEgY/maxresdefault.jpg" class="card-img-top img-fluid" alt="Formula 1 Image">
+            <div class="card-body">
+                <h5 class="card-title">It is one of the best cars in the history of Formula 1</h5>
+                <p class="card-text">You can also see the best drivers in formula 1, press the button for this</p>
+                <a href="/top_10_drivers" class="btn btn-primary">Top Drivers</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block title %}
+    <title>Home page</title>
+{% endblock %}
